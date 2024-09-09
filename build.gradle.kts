@@ -36,6 +36,10 @@ tasks.jar{
     manifest{
         attributes["Main-Class"] = "org.example.Main"
     }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from({
+        configurations.runtimeClasspath.get().filter {it.name.endsWith("jar")}.map{zipTree(it)}
+    })
 }
 
 tasks.test {
