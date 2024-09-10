@@ -11,7 +11,7 @@ repositories {
 }
 
 application{
-    mainClass.set("org.example.Main")
+    mainClass.set("org.example.EchoServerApplication")
 }
 
 dependencies {
@@ -34,7 +34,7 @@ dependencies {
 
 tasks.jar{
     manifest{
-        attributes["Main-Class"] = "org.example.Main"
+        attributes["Main-Class"] = "org.example.EchoServerApplication"
     }
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from({
